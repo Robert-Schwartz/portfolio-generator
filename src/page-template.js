@@ -1,3 +1,4 @@
+//generate HTML using an object literal after return
 const generatePage = (name, github) => {
   return `
   <!DOCTYPE html> 
@@ -17,4 +18,5 @@ const generatePage = (name, github) => {
   `;
 };
 
+//add to end of page to export function to main app.js
 module.exports = generatePage;
