@@ -1,4 +1,4 @@
-const profileDataArgs = process.argv.slice(2);
+const profileDataArgs = process.argv.slice(2, process.argv.length);
 
 //function that takes in the array of command-line arguments
 const printProfileData = (profileDataArr) => {
