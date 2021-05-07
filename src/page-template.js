@@ -1,22 +1,24 @@
-//generate HTML using an object literal after return
-const generatePage = (name, github) => {
+module.exports = (templateData) => {
+  console.log(templateData);
+  // destructure projects and about data from templateData based on their property key names
+  // this will create three variables based on data in templateData
+  const { projects, about, ...header } = templateData;
+
   return `
-  <!DOCTYPE html> 
-  <html lang="en"> 
-  <head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio Demo</title>
-  </head>
+    </head>
 
-  <body>
-    <h1>${name}</h1>
-    <h2><a href="https://github.com/${github}">Github</a></h2>
-  </body>
-  </html>
-  `;
+    <body>
+    <h1>${templateData.name}</h1>
+    <h2><a href="https://github.com/${templateData.github}">Github</a></h2>
+    </body>
+    </html>
+    `;
 };
-
-//add to end of page to export function to main app.js
-module.exports = generatePage;
